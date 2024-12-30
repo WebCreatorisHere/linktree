@@ -20,7 +20,7 @@ const genzsection = ({}) => {
             setiziToast(izitoastmodule)
 
             
-            let a = await fetch("http://localhost:3000/actions/addtree")
+            let a = await fetch(`${NEXT_PUBLIC_HOST}/actions/addtree`)
             let c = await a.json()
             setTrees(c.data)
         }
