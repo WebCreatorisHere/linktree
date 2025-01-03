@@ -76,9 +76,9 @@ const page = () => {
       
     }
   return (
-    <section className="flex flex-col items-center justify-center w-full h-screen">
-      <h1 className='font-bold my-2 text-[42px]'>Create Your Account</h1>
-      <form onSubmit={handleSubmit(onsubmit)} className='flex flex-col gap-4 w-[50%]'>
+    <section className="flex flex-col items-center justify-center w-full h-[628px]">
+      <h1 className='font-bold my-2 text-[42px] max-[950px]:text-[36px] max-[950px]:leading-[36px] max-[450px]:text-[30px] max-[900px]:my-10 max-[450px]:leading-[30px]'>Create Your Account</h1>
+      <form onSubmit={handleSubmit(onsubmit)} className='flex flex-col gap-4 max-[900px]:w-full max-[900px]:px-24 max-[600px]:px-6 w-[50%]'>
         <div>{errors.name && <span className="text-sm text-[#ff6b6b] font-semibold ">Please enter your Name</span>}
           <input
             {...register("name", { required: true })}

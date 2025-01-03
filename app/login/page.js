@@ -4,6 +4,7 @@ import { signIn ,getCsrfToken} from "next-auth/react";
 import { useForm } from "react-hook-form";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Login = () => {
    
@@ -75,13 +76,14 @@ const Login = () => {
   };
   return (
     <main className="flex">
-      <div className="w-1/2 p-10">
-      <div className="flex font-semibold text-[28px] leading-9 items-center"><p>Bittree</p> <img className="" width={22} src="greenlogo.svg" alt="" /></div>
+      <div className="w-1/2 p-10 max-[450px]:p-5 max-[950px]:w-full">
+      <div className="flex font-semibold text-[28px] leading-9 justify-between items-center"><div className="flex items-center"><p>Bittree</p> <img className="" width={22} src="greenlogo.svg" alt="" /></div>
+      <div><Link prefetch={true} href={"/"} className=' p-4 max-[900px]:p-3 max-[450px]:text-base max-[900px]:px-4 px-6 hover:bg-[#00000016] bg-[#eff0ec] text-[#1e2330] rounded-lg font-medium text-lg'>Home</Link></div></div>
      <div className="flex items-center flex-col gap-4 py-10 mt-16">
-      <h1 className="font-extrabold text-[42px] leading-9 text-black">Sign Up or Log In</h1> 
-      <p className="text-[#676b5f] font-normal">Welcome! Welcome! Welcome!</p>
+      <h1 className="font-extrabold max-[950px]:text-[36px] max-[950px]:leading-[36px] max-[450px]:text-[30px] tracking-tight max-[450px]:leading-[30px] text-[42px] leading-9 text-black">Sign Up or Log In</h1> 
+      <p className="text-[#676b5f] font-normal max-[450px]:text-sm">Welcome! Welcome! Welcome!</p>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 px-10">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-[450px]:px-0 gap-4 px-10">
         <div className="flex flex-col">
         {errors.email && <span className="text-sm text-[#ff6b6b] font-semibold ">Please enter an email</span>}
         
@@ -107,7 +109,7 @@ const Login = () => {
         </button>
       </form>
       <p className="text-[#676b5f] font-normal text-center my-4">OR</p>
-      <div className="flex flex-col gap-3 px-10">
+      <div className="flex flex-col gap-3 px-10  max-[450px]:px-0">
       <button
         onClick={() => handleProviderSignIn("google")}
         type="button"
@@ -140,7 +142,7 @@ const Login = () => {
 </div>
       </div>
 
-      <div className="w-1/2 relative overflow-hidden"><img className="absolute translate-y-[-20%]" src="images/banner.png" alt="" /></div>
+      <div className="w-1/2 relative overflow-hidden max-[950px]:hidden"><img className="absolute translate-y-[-20%]" src="images/banner.png" alt="" /></div>
     </main>
   );
 };

@@ -113,59 +113,59 @@ const genzsection = ({}) => {
     <main className='relative -z-20 bg-[#E9C0E9] pt-[10%]'>
         <Navbar/>
     <section className='flex -z-10 relative justify-between text-gray-900 h-[100%]'>
-                <div className='col1 w-1/2 p-10 flex justify-center items-center flex-col'>
-                    <h1 className='font-extrabold my-8 text-3xl '>Create your Bittree</h1>
-                    <div className='flex flex-col gap-4 justify-center items-start  pl-9'>
+                <div className='col1 w-[60%] max-[1060px]:w-full p-10 max-[1060px]:p-5 flex justify-center items-center flex-col'>
+                    <h1 className='font-extrabold my-8 text-3xl max-sm:text-2xl max-sm:mb-4 max-sm:mt-16'>Create your Bittree</h1>
+                    <div className='flex flex-col gap-4 justify-center items-start max-[1060px]:pl-0 pl-9'>
                         <div className='item'>
-                            <h1 className='font-semibold text-2xl text-start'>Step 1: Create Your Handle</h1>
-                            <div className='mx-6  my-2.5 '>
+                            <h1 className='font-semibold text-2xl text-start max-sm:text-xl'>Step 1: Create Your Handle</h1>
+                            <div className='mx-6 max-sm:mx-0 my-2.5 '>
                                 <input type="text"
                                     value={others.handle || ""}
                                     onChange={(e) => { setothers({ ...others, [e.target.name]: e.target.value }) }}
                                     placeholder='Enter your handle'
-                                    className="bg-[#f6f7f5] p-4 py-2 outline-none border rounded-full focus:outline-purple-500 focus:outline-4 outline-offset-[-1px] border-[#9a9a9a]"
+                                    className="bg-[#f6f7f5] p-4 py-2 max-sm:text-sm outline-none border rounded-full focus:outline-purple-500 focus:outline-4 outline-offset-[-1px] border-[#9a9a9a]"
                                     name='handle'
                                 />
                             </div>
                         </div>
 
                         <div className='item'>
-                            <h1 className='font-semibold text-2xl text-start'>Step 2: Add Links</h1>
+                            <h1 className='font-semibold text-2xl text-start  max-sm:text-xl'>Step 2: Add Links</h1>
                             {links && links.map((object, index) => {
-                                return <div key={index} className='mx-6  my-2.5 flex flex-wrap gap-4'>
+                                return <div key={index} className='mx-6 max-sm:mx-0 my-2.5 flex flex-wrap gap-4'>
                                     <input type="text"
                                         value={object.text || ""}
                                         onChange={(e) => { handlelinkchange(index, e.target.value, object.link, e) }}
                                         placeholder='Enter you link text'
-                                        className="bg-[#f6f7f5] p-4 py-2 outline-none border rounded-full focus:outline-purple-500 focus:outline-4 outline-offset-[-1px] border-[#9a9a9a]"
+                                        className="bg-[#f6f7f5] p-4 py-2 max-sm:text-sm outline-none border rounded-full focus:outline-purple-500 focus:outline-4 outline-offset-[-1px] border-[#9a9a9a]"
                                         name='text'
                                     />
                                     <input type="text"
                                         value={object.link || ""}
                                         onChange={(e) => { handlelinkchange(index, object.text, e.target.value, e) }}
                                         placeholder='Enter you link'
-                                        className="bg-[#f6f7f5] p-4 py-2 outline-none border rounded-full focus:outline-purple-500 focus:outline-4 outline-offset-[-1px] border-[#9a9a9a]"
+                                        className="bg-[#f6f7f5] p-4 py-2 max-sm:text-sm outline-none border rounded-full focus:outline-purple-500 focus:outline-4 outline-offset-[-1px] border-[#9a9a9a]"
                                         name='link'
                                     />
                                 </div>
                             })}
 
-                            <button onClick={() => addlink()} className="mx-6 bg-[#8129d9] disabled:bg-[#8129d9c8] text-white p-3 py-1.5 font-semibold text-sm rounded-full" type="submit">
+                            <button onClick={() => addlink()} className="mx-6 max-sm:text-sm bg-[#8129d9] disabled:bg-[#8129d9c8] text-white p-3 py-1.5 font-semibold text-sm rounded-full" type="submit">
                                 + Add Link
                             </button>
                         </div>
 
                         <div className='item w-full'>
-                            <h1 className='font-semibold text-2xl text-start'>Step 3: Add Your Appearance</h1>
-                            <div className='mx-6  my-2.5 flex flex-col w-full gap-4'>
+                            <h1 className='font-semibold text-2xl text-start max-sm:text-xl'>Step 3: Add Your Appearance</h1>
+                            <div className='mx-6 max-sm:mx-0 my-2.5 flex flex-col w-full gap-4'>
                                 <input type="text"
                                     placeholder='Enter URL of profile picture'
                                     value={others.pic || ""}
                                     onChange={(e) => { setothers({ ...others, [e.target.name]: e.target.value }) }}
                                     name='pic'
-                                    className="bg-[#f6f7f5] p-4 py-2 outline-none border rounded-full focus:outline-purple-500 focus:outline-4 outline-offset-[-1px] border-[#9a9a9a]"
+                                    className="bg-[#f6f7f5] p-4 py-2 max-sm:text-sm outline-none border rounded-full focus:outline-purple-500 focus:outline-4 outline-offset-[-1px] border-[#9a9a9a]"
                                 />
-                                <button disabled={teller || others.handle == "" || others.pic == "" || links[0].link=="" || links[0].text==""} onClick={submithandler} className="bg-[#8129d9] creator disabled:bg-[#8129d9c8] text-white p-3 py-2 font-semibold text-base rounded-full" type="submit">
+                                <button disabled={teller || others.handle == "" || others.pic == "" || links[0].link=="" || links[0].text==""} onClick={submithandler} className="bg-[#8129d9] creator disabled:bg-[#8129d9c8] text-white p-3 py-2 font-semibold text-base max-sm:text-sm rounded-full" type="submit">
                                     Create Your BitTree
                                 </button>
                             </div>
@@ -173,7 +173,7 @@ const genzsection = ({}) => {
                     </div>
                 </div>
 
-                <div className='col2 flex justify-center items-end h-full relative w-1/2 overflow-hidden pt-[3.3%]'>
+                <div className='col2 flex justify-center items-end h-full relative w-[40%] max-[1060px]:hidden overflow-hidden pt-[3.3%]'>
                     <img className='w-2/3 mb-5 rotate-1' src="images/scene.png" alt="" />
                 </div>
             </section>

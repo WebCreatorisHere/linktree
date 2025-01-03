@@ -74,18 +74,18 @@ const footer = () => {
                 <button className='text-sm text-left font-[600] text-[#676b5f] '>Cookie Preferences</button>
             </div>
         </div>
-        <div className='bg-white mb-20 max-[900px]:mx-6 mx-12 px-16 flex flex-wrap gap-8 justify-between max-[900px]:p-10  items-center pb-12 rounded-bl-xl rounded-br-xl'>
-            <div className='flex gap-2'>
+        <div className='bg-white max-[450px]:p-5 mb-20 max-[900px]:mx-6 mx-12 px-16 flex flex-wrap gap-8 justify-between max-[900px]:p-10  items-center pb-12 rounded-bl-xl rounded-br-xl'>
+            <div className='flex gap-2 flex-wrap'>
             {!session && <Link prefetch={true} href={"/login"} className=' p-4 px-6 hover:bg-[#00000016] bg-[#eff0ec] text-[#1e2330] rounded-lg font-medium text-lg'>Log in</Link>}
         <Link href={"/login"} className='rounded-full hover:opacity-[0.92] px-[26px] bg-[#d2e823] py-4 text-[#1e2330] text-lg font-medium'>Get started for free</Link>
         {session && <button onClick={()=>{signOut()}} className='rounded-full hover:opacity-[0.92] px-[26px] bg-[#1e2330] py-4 text-white text-lg font-medium'>Log Out</button>}
         </div>
         
         <div className='flex gap-2'>
-            <button className='rounded-full hover:opacity-[0.92]  bg-white  text-white text-lg font-medium'><img width={60} height={60} className='' src="/mainsvg.svg" alt="mera" /></button>
-            <button className='rounded-full hover:opacity-[0.92]  bg-white  text-white text-lg font-medium'><img width={60} height={60} className='' src="/threads.svg" alt="mera" /></button>
-            <button className='rounded-full hover:opacity-[0.92]  bg-white  text-white text-lg font-medium'><img width={60} height={60} className='' src="/tiktok.svg" alt="mera" /></button>
-            <button className='rounded-full hover:opacity-[0.92]  bg-white  text-white text-lg font-medium'><img width={60} height={60} className='' src="/instagram.svg" alt="mera" /></button>
+            <Link prefetch={true} href={"https://bittreebyyash.vercel.app/yash"} className='rounded-full hover:opacity-[0.92]  bg-white  text-white text-lg font-medium'><img width={60} height={60} className='' src="/mainsvg.svg" alt="mera" /></Link>
+            <Link href={"/"} className='rounded-full hover:opacity-[0.92]  bg-white  text-white text-lg font-medium'><img width={60} height={60} className='' src="/threads.svg" alt="mera" /></Link>
+            <Link href={"/"} className='rounded-full hover:opacity-[0.92]  bg-white  text-white text-lg font-medium'><img width={60} height={60} className='' src="/tiktok.svg" alt="mera" /></Link>
+            <Link href={"https://www.instagram.com/enhancewithyash/"} className='rounded-full hover:opacity-[0.92]  bg-white  text-white text-lg font-medium'><img width={60} height={60} className='' src="/instagram.svg" alt="mera" /></Link>
         </div>
         </div>
 

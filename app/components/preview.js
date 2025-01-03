@@ -10,9 +10,9 @@ const preview = () => {
     router.push(`/generate?handle=${handle}`)
   }
   return (
-    <section className='bg-[#254f1a] max-[900px]:flex-col max-[900px]:gap-0  gap-10 px-12 max-[900px]:px-[24px] pt-[18%] max-[900px]:pt-[156px] text-[#d2e823] max-[900px]:h-auto h-[820px] flex '>
+    <section className='bg-[#254f1a] max-[900px]:flex-col max-[900px]:gap-0  gap-10 px-12 max-[900px]:px-[24px] pt-[18%] max-[900px]:pt-[146px] text-[#d2e823] max-[900px]:h-auto h-[820px] flex '>
       <div className='w-[55%] max-lg:my-10 max-[900px]:w-full mx-auto max-[900px]:my-4'>
-        <h1 className='font-black max-[450px]:text-[32px] max-[450px]:leading-[32px] text-[54px] max-lg:text-[52px] tracking-tight leading-[1] font-sans max-[900px]:text-[36px] max-[900px]:leading-[36px]'>Everything you are. In one, simple link in bio.</h1>
+        <h1 className='font-black max-[450px]:text-[36px] max-[450px]:leading-[36px] text-[54px] max-lg:text-[52px]  max-sm:font-black tracking-tight leading-[1] font-sans max-[900px]:text-[36px] max-[900px]:leading-[36px]'>Everything you are. In one, simple link in bio.</h1>
         <p className='font-sans text-lg max-[450px]:text-base  tracking-tight font-semibold my-6 px-2'>Join 50M+ people using Bittree for their link in bio. One link to help you share everything you create, curate and sell from your Instagram, TikTok, Twitter, YouTube and other social media profiles.</p>
         <div className='flex gap-2 relative my-8 flex-wrap'>
           <input type="text"
@@ -28,7 +28,7 @@ const preview = () => {
 
       </div>
       <div className='w-[45%] max-[900px]:w-full flex justify-center items-start mx-auto'>
-        <img className='w-[84%] max-[900px]:w-[70%] max-[900px]:my-20 max-lg:mt-20' src="images/home.png" alt="" />
+        <img className='w-[84%] max-[900px]:w-[70%] max-sm:mt-10 max-[900px]:my-20 max-lg:mt-20' src="images/home.png" alt="" />
       </div>
     </section>
   )
