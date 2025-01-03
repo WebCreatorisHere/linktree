@@ -2,7 +2,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useState, useEffect } from 'react'
-import 'izitoast/dist/css/iziToast.min.css';
+
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
@@ -59,6 +59,7 @@ const page = () => {
             element.value = ''
 
           }
+          router.push("/generate")
         }
         else {
           iziToast.error({

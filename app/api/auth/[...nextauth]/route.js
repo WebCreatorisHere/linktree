@@ -48,6 +48,14 @@ export const authOptions = NextAuth({
           return true
         }
       }
+      if (account.provider === 'credentials') {
+        let existingUser = await collection.findOne({ email: user.email, password: user.password })
+        
+        if (existingUser) {
+          return true
+        } else {
+          return false
+        }}
     },
   
   },

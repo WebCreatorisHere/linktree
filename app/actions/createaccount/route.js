@@ -17,7 +17,14 @@ export async function POST(request) {
     };
 
     const result = await collection.updateOne(locator,changes)
-    return NextResponse.json({message:"Passwords matches perfectly!",result,success:true});
+    console.log(result)
+    if(result){
+        let a = await collection.deleteMany({isverified:false})
+        return NextResponse.json({message:"Passwords matches perfectly!",result,success:true});
+    }
+else{
+    return NextResponse.json({message:"Passwords do not match",success:false})
+}
 }
     else{
         return NextResponse.json({message:"Passwords do not match",success:false})

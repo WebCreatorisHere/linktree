@@ -9,6 +9,8 @@ const Login = () => {
    
     const router = useRouter();
     const [csrfToken, setCsrfToken] = useState("")
+    const [iziToast, setizitoast] = useState(null)
+    const [completed, setcompleted] = useState(false)
     
     const {data:session} = useSession()
 
@@ -20,11 +22,22 @@ const Login = () => {
 
     fetchCsrfToken();
         document.title = "Login - Get Me a Chai"
-        if (session) {
+        if (session && !completed) {
             router.push("/createaccount");
         }
-     
+        if(session && completed){
+          router.push("/generate")
+        }
    }, [ session])
+   useEffect(() => {
+    const loadizitoast = async () => {
+      const izitoastmodule = (await import("izitoast")).default
+      setizitoast(izitoastmodule)
+      
+    }
+    loadizitoast()
+   }, [])
+   
   const {
     register,
     handleSubmit,
@@ -32,17 +45,33 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-   let response = await signIn("credentials", {
+  let a = await signIn("credentials", {
       email: data.email,
       password: data.password,
       csrfToken,
       redirect: false,
-    });
+    }).then((response)=>{
+      if (response.ok) {
+        router.push("/generate");
+        return true
+      }
+      else{
+        iziToast.error({
+          title: "Error",
+          message: "Invalid Email or Password",
+          position:"topRight"
+        })
+        return false
+      }
+    })
+    setcompleted(a)
   }
 
   const handleProviderSignIn = async (provider) => {
     const response = await signIn(provider);
-  
+    if (response.ok) {
+      router.push("/createaccount");
+    }
   };
   return (
     <main className="flex">
