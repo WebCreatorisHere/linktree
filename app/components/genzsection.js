@@ -110,7 +110,7 @@ const genzsection = ({}) => {
     }
 
   return (
-    <main className='relative -z-20 bg-[#E9C0E9] pt-[10%]'>
+    <main className='relative -z-20 bg-[#E9C0E9] h-screen min-h-[641px] pt-[10%]'>
         <Navbar/>
     <section className='flex -z-10 relative justify-between text-gray-900 h-[100%]'>
                 <div className='col1 w-[60%] max-[1060px]:w-full p-10 max-[1060px]:p-5 flex justify-center items-center flex-col'>
