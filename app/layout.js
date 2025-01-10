@@ -1,7 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import "@copilotkit/react-ui/styles.css";
 import "./globals.css";
 import Sessionwrapperr from "./components/sessionwraper";
 import 'izitoast/dist/css/iziToast.min.css';
+import { CopilotKit } from "@copilotkit/react-core";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +27,9 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Sessionwrapperr>
-        {children}
+        <CopilotKit runtimeUrl="/api/copilotkit"> 
+            {children}
+          </CopilotKit>
         </Sessionwrapperr>
       </body>
     </html>

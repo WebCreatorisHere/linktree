@@ -5,6 +5,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { useRouter } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import Navbar from './navbar';
+import { CopilotPopup } from "@copilotkit/react-ui";
 
 const genzsection = ({}) => {
     const searchparams = useSearchParams()
@@ -177,6 +178,7 @@ const genzsection = ({}) => {
                     <img className='w-2/3 mb-5 rotate-1' src="images/scene.png" alt="" />
                 </div>
             </section>
+            
             </main>
            
   )
