@@ -9,7 +9,6 @@ export async function POST(request) {
 
      let result = await collection.insertOne(body)
      
-
      return NextResponse.json({saved:body,message:"successfully added",success:true})
 }
 export async function GET(request) {

@@ -19,8 +19,8 @@ const Login = () => {
       const fetchCsrfToken = async () => {
       const token = await getCsrfToken();
       setCsrfToken(token);
-    };
-
+    }
+    
     fetchCsrfToken();
         document.title = "Login - Get Me a Chai"
         if (session && !completed) {

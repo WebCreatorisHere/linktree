@@ -46,11 +46,12 @@ const genzsection = ({}) => {
             
                 showtoast("error","Error","Handle Already Exists!!")
             }
-            else if(!atrue){
+        else if(!atrue){
                 
                 showtoast("error","Error","Please Enter a valid URL!!")
         }
-        else{setteller(true)
+        else{
+        setteller(true)
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
